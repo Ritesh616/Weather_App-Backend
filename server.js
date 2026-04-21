@@ -15,6 +15,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+/* ================= ROOT ROUTE (FIX) ================= */
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running successfully 🚀");
+});
+
 /* ================= DB CONNECTION ================= */
 mongoose
   .connect(process.env.MONGO_URI)
